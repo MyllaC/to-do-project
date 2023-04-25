@@ -2,17 +2,16 @@ import './global.css'
 import styles from './App.module.css'
 import { Header } from './components/Header'
 import { AddTask } from './components/addTask'
-import { Task } from './components/Task'
+import { Task, taskType } from './components/Task'
 import { useState } from 'react'
 import { EmptyState } from './components/EmptyState'
 import { v4 as uuidv4 } from 'uuid'
 
 export function App() {
-  const [tasks, setTasks] = useState([])
+  const [tasks, setTasks] = useState<taskType[]>([])
 
   function addNewTask(taskToAdd: string) {
-    debugger
-    const newTask = {
+    const newTask: taskType = {
       id: uuidv4(),
       done: false,
       label: taskToAdd

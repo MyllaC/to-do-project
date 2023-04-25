@@ -1,10 +1,10 @@
 import { CheckCircle, Circle, Trash } from 'phosphor-react'
 
 interface TaskProps {
-  task: task
+  task: taskType
 }
 
-interface task {
+export interface taskType {
   id: string
   done: boolean
   label: string
