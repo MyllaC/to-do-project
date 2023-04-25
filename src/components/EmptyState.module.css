@@ -1,0 +1,16 @@
+.emptyStateBox {
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 1.5rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.5rem;
+
+  border-top: 1px solid var(--gray-400);
+  border-radius: 8px;
+}
+
+strong {
+  color: var(--gray-300);
+  font-size: 16px;
+}

@@ -1,0 +1,48 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.taskContainer {
+  width: 60%;
+  margin-top: 4rem;
+}
+
+.taskListHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.taskCounterContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.taskCounter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 8px;
+  margin-left: 0.625rem;
+
+  background: var(--gray-400);
+  border-radius: 999px;
+  color: var(--gray-200);
+  font-weight: 700;
+  text-size: 0.75rem;
+}
+
+.createdTasks {
+  color: var(--blue-500);
+  font-weight: 700;
+  text-size: 0.875rem;
+}
+
+.finalizedTasks {
+  color: var(--purple-500);
+  font-weight: 700;
+  text-size: 0.875rem;
+}
