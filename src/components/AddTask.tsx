@@ -2,17 +2,21 @@ import { PlusCircle } from 'phosphor-react'
 import styles from './AddTask.module.css'
 import { useState, ChangeEvent } from 'react'
 
-export function AddTask({ addNewTask }) {
+interface AddTaskProps {
+  addNewTask: (task: string) => void
+}
+
+export function AddTask({ addNewTask }: AddTaskProps) {
   const [newTask, setNewTask] = useState('')
 
-  function handleNewTaskChange(event: ChangeEvent<HTMLTextAreaElement>) {
+  function handleNewTaskChange(event: ChangeEvent<HTMLInputElement>) {
     event.target.setCustomValidity('')
     setNewTask(event.target.value)
   }
 
   function handleNewTask() {
-    console.log(newTask)
     addNewTask(newTask)
+    setNewTask('')
   }
 
   return (

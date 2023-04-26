@@ -1,0 +1,56 @@
+.taskContainer {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  align-items: center;
+  justify-content: center;
+  background: var(--gray-500);
+  border: 1px solid var(--gray-400);
+  border-radius: 8px;
+}
+
+.task + .task {
+  margin-top: 0.75rem;
+}
+
+.labelTaskToDo {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin-left: 0.75rem;
+  color: var(--gray-100);
+}
+
+.labelTaskDone {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin-left: 0.75rem;
+  color: var(--gray-300);
+  text-decoration: line-through;
+}
+
+.checkCircle {
+  cursor: pointer;
+  color: var(--purple-300);
+}
+
+.checkCircle:hover {
+  color: var(--purple-500);
+}
+
+.circle {
+  cursor: pointer;
+  color: var(--blue-300);
+}
+
+.circle:hover {
+  color: var(--blue-500);
+}
+
+.trash:hover {
+  cursor: pointer;
+  color: var(--red-500);
+}

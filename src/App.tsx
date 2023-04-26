@@ -19,6 +19,31 @@ export function App() {
     setTasks([...tasks, newTask])
   }
 
+  function toggleTask(updateTask: taskType) {
+    const updatedTasks = tasks.map(task => {
+      if (task.id === updateTask.id) {
+        task.done = !task.done
+      }
+      return task
+    })
+
+    setTasks(updatedTasks)
+  }
+
+  function onDeleteTask(taskToDelete: taskType) {
+    const tasksWithoutDeletedOne = tasks.filter(task => {
+      return task !== taskToDelete
+    })
+
+    setTasks(tasksWithoutDeletedOne)
+  }
+
+  const createdTasks = tasks.length
+
+  const doneTasks = tasks.reduce((accumulator, task) => {
+    return (accumulator += task.done ? 1 : 0)
+  }, 0)
+
   return (
     <div>
       <Header />
@@ -29,17 +54,24 @@ export function App() {
           <header className={styles.taskListHeader}>
             <div className={styles.taskCounterContainer}>
               <span className={styles.createdTasks}>Tarefas criadas</span>
-              <span className={styles.taskCounter}>0</span>
+              <span className={styles.taskCounter}>{createdTasks}</span>
             </div>
             <div className={styles.taskListHeader}>
               <span className={styles.finalizedTasks}>Concluídas</span>
-              <span className={styles.taskCounter}>0</span>
+              <span className={styles.taskCounter}>{doneTasks}</span>
             </div>
           </header>
-          <div>
+          <div className={styles.tasks}>
             {tasks.length ? (
               tasks.map(task => {
-                return <Task task={task} />
+                return (
+                  <Task
+                    key={task.id}
+                    task={task}
+                    checkTask={toggleTask}
+                    deleteTask={onDeleteTask}
+                  />
+                )
               })
             ) : (
               <EmptyState />
