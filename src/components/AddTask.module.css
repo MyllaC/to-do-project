@@ -23,6 +23,7 @@
 }
 
 .button {
+  cursor: pointer;
   background: var(--blue-500);
   border: none;
   border-radius: 8px;
