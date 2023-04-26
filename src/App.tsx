@@ -1,7 +1,7 @@
 import './global.css'
 import styles from './App.module.css'
 import { Header } from './components/Header'
-import { AddTask } from './components/addTask'
+import { AddTask } from './components/AddTask'
 import { Task, taskType } from './components/Task'
 import { useState } from 'react'
 import { EmptyState } from './components/EmptyState'
